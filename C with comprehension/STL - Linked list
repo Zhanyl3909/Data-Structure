@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <list>
+using namespace std;
+
+int main()
+{	
+	list<int> list1;
+	list<int>::iterator p;
+	
+	list1.push_back(10); list1.push_back(20); list1.push_back(30);
+	list1.push_back(40); list1.push_back(50);
+
+	list1.pop_back();  list1.pop_front();
+	list1.push_front(60); list1.push_front(70);
+
+	for(p = list1.begin(); p != list1.end(); p++)
+		printf("%d ", *p);
+
+	return 0;
+}
