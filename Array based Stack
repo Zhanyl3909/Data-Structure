@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define Max_Size   101
+int arr[Max_Size];
+int top = -1;
+
+void push(int x) {
+    if(top == Max_Size-1) {
+        printf("Error: Stack overflow");
+        return;
+    }
+    top++;
+    arr[top] = x;
+}
+
+void pop() {
+    if(top == -1) {
+        printf("Error: Stack is empty");
+        return;
+    }
+    top--;
+}
+
+int Top() {
+    return arr[top];
+}
+
+void print() {
+    int i;
+    printf("Stack: ");
+    for(i=0; i<=top; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    push(2); print();
+    push(10); print();
+    push(12); print();
+    pop(); print();
+    Top(); print();
+    push(7); print();
+}
